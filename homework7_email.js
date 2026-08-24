@@ -20,4 +20,9 @@ let emailRegex = /^[A-Za-z0-9]+(\.[A-Za-z0-9]+)?@(gmail\.com|yahoo\.com)$/;
 let validUsers = arr.filter(function(user) {
     return emailRegex.test(user.email);
 });
-console.log(validUsers);
+
+let validEmails = validUsers.map(function(user) {
+    return user.email;
+});
+
+console.log(validEmails);
