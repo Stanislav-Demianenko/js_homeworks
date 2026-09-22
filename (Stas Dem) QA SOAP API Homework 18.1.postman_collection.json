@@ -1,0 +1,105 @@
+{
+  "info": {
+    "_postman_id": "7bddcab7-4b7c-480a-b8f1-8d8632692304",
+    "name": "QA SOAP API Homework 18.1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57759258",
+    "_collection_link": "https://go.postman.co/collection/57759258-7bddcab7-4b7c-480a-b8f1-8d8632692304?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Is Valid ISBN13 Number",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const responseBody = pm.response.text();\n\n// 1. Status code\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\n// 2. Response is not empty\npm.test(\"Response body is not empty\", function () {\n    pm.expect(responseBody).to.not.be.empty;\n});\n\n// 3. Response contains SOAP Envelope\npm.test(\"Response contains SOAP Envelope\", function () {\n    pm.expect(responseBody).to.include(\"Envelope\");\n});\n\n// 4. Response contains SOAP Body\npm.test(\"Response contains SOAP Body\", function () {\n    pm.expect(responseBody).to.include(\"Body\");\n});\n\n// 5. Response contains ISBN13 response\npm.test(\"Response contains IsValidISBN13Response\", function () {\n    pm.expect(responseBody).to.include(\"IsValidISBN13Response\");\n});\n\n// 6. ISBN13 result exists\npm.test(\"ISBN13 result exists\", function () {\n    pm.expect(responseBody).to.include(\"IsValidISBN13Result\");\n});\n\n// 7. ISBN13 is valid\npm.test(\"ISBN13 result is true\", function () {\n    pm.expect(responseBody).to.include(\"true\");\n});\n\n// 8. Content-Type header exists\npm.test(\"Content-Type header exists\", function () {\n    pm.expect(pm.response.headers.has(\"Content-Type\")).to.be.true;\n});\n\n// 9. Content-Type is XML\npm.test(\"Content-Type is XML\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"text/xml\");\n});\n\n// 10. Server header exists\npm.test(\"Server header exists\", function () {\n    pm.expect(pm.response.headers.has(\"Server\")).to.be.true;\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml; charset=utf-8"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <IsValidISBN13 xmlns=\"http://webservices.daehosting.com/ISBN\">\n      <sISBN>978-1-4612-9090-2</sISBN>\n    </IsValidISBN13>\n  </soap:Body>\n</soap:Envelope>",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://webservices.daehosting.com/services/isbnservice.wso",
+          "protocol": "http",
+          "host": [
+            "webservices",
+            "daehosting",
+            "com"
+          ],
+          "path": [
+            "services",
+            "isbnservice.wso"
+          ]
+        },
+        "description": "The test is done by calculation on the first 12 digits and compare the result with the checksum number at the end. You have to pass a 13 digits number."
+      },
+      "response": []
+    },
+    {
+      "name": "Is Valid ISBN10 Number",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const responseBody = pm.response.text();\n\n// 1. Status code\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\n// 2. Response is not empty\npm.test(\"Response body is not empty\", function () {\n    pm.expect(responseBody).to.not.be.empty;\n});\n\n// 3. Response contains SOAP Envelope\npm.test(\"Response contains SOAP Envelope\", function () {\n    pm.expect(responseBody).to.include(\"Envelope\");\n});\n\n// 4. Response contains SOAP Body\npm.test(\"Response contains SOAP Body\", function () {\n    pm.expect(responseBody).to.include(\"Body\");\n});\n\n// 5. Response contains ISBN10 response\npm.test(\"Response contains IsValidISBN10Response\", function () {\n    pm.expect(responseBody).to.include(\"IsValidISBN10Response\");\n});\n\n// 6. ISBN10 result exists\npm.test(\"ISBN10 result exists\", function () {\n    pm.expect(responseBody).to.include(\"IsValidISBN10Result\");\n});\n\n// 7. ISBN10 is valid\npm.test(\"ISBN10 result is true\", function () {\n    pm.expect(responseBody).to.include(\"true\");\n});\n\n// 8. Content-Type header exists\npm.test(\"Content-Type header exists\", function () {\n    pm.expect(pm.response.headers.has(\"Content-Type\")).to.be.true;\n});\n\n// 9. Content-Type is XML\npm.test(\"Content-Type is XML\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"text/xml\");\n});\n\n// 10. Server header exists\npm.test(\"Server header exists\", function () {\n    pm.expect(pm.response.headers.has(\"Server\")).to.be.true;\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml; charset=utf-8"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <IsValidISBN10 xmlns=\"http://webservices.daehosting.com/ISBN\">\n      <sISBN>0-19-852663-6</sISBN>\n    </IsValidISBN10>\n  </soap:Body>\n</soap:Envelope>",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://webservices.daehosting.com/services/isbnservice.wso",
+          "protocol": "http",
+          "host": [
+            "webservices",
+            "daehosting",
+            "com"
+          ],
+          "path": [
+            "services",
+            "isbnservice.wso"
+          ]
+        },
+        "description": "The test is done by calculation on the first 9 digits and compare the result with the checksum number at the end. You have to pass a 10 digits number or 8 digits and an X."
+      },
+      "response": []
+    }
+  ]
+}
