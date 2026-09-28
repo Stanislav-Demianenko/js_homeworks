@@ -1,0 +1,893 @@
+{
+  "info": {
+    "_postman_id": "68b1834a-dc11-44e8-9dac-8ca5eafdb808",
+    "name": "QA Auto API Homework 15.1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57759258",
+    "_collection_link": "https://go.postman.co/collection/57759258-68b1834a-dc11-44e8-9dac-8ca5eafdb808?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "01 - Create User",
+      "item": [
+        {
+          "name": "01 - Create User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const requestBody = JSON.parse(pm.variables.replaceIn(pm.request.body.raw));",
+                  "const responseBody = pm.response.json();",
+                  "",
+                  "pm.environment.set(\"oldPassword\", requestBody.password);",
+                  "pm.environment.set(\"userEmail\", requestBody.email);",
+                  "pm.environment.set(\"userId\", responseBody.data.userId);",
+                  "",
+                  "pm.test(\"Status code is 201\", () => {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Email is valid\", () => {",
+                  "    pm.expect(requestBody.email).to.match(/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/);",
+                  "});",
+                  "",
+                  "pm.test(\"JSON schema is valid\", () => {",
+                  "    pm.response.to.have.jsonSchema({",
+                  "        type: \"object\",",
+                  "        required: [\"status\", \"data\"],",
+                  "        properties: {",
+                  "            status: { type: \"string\" },",
+                  "            data: {",
+                  "                type: \"object\",",
+                  "                required: [\"userId\"],",
+                  "                properties: {",
+                  "                    userId: { type: \"integer\" }",
+                  "                }",
+                  "            }",
+                  "        }",
+                  "    });",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "const uniqueEmail = `stas.qa.${Date.now()}@gmail.com`;",
+                  "",
+                  "pm.environment.set(\"userEmail\", uniqueEmail);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Stas\",\n  \"lastName\": \"Demianenko\",\n  \"email\": \"{{userEmail}}\",\n  \"password\": \"{{oldPassword}}\",\n  \"repeatPassword\": \"{{oldPassword}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/signup",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "signup"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Negative Signup Tests",
+      "item": [
+        {
+          "name": "NEG - Signup Validation",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const responseBody = pm.response.json();",
+                  "const expectedMessage = pm.variables.get(\"expectedMessage\");",
+                  "",
+                  "pm.test(\"Status code is 400\", () => {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test(\"Correct error message\", () => {",
+                  "    pm.expect(responseBody.message).to.eql(expectedMessage);",
+                  "});",
+                  "",
+                  "const index = Number(pm.environment.get(\"signupEmailIndex\"));",
+                  "",
+                  "if (index !== 0) {",
+                  "    pm.execution.setNextRequest(\"NEG - Signup Validation\");",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "const cases = [",
+                  "    {",
+                  "        email: \"\",",
+                  "        message: \"\\\"email\\\" is not allowed to be empty\"",
+                  "    },",
+                  "    {",
+                  "        email: \"stas.gmail.com\",",
+                  "        message: \"Email is incorrect\"",
+                  "    },",
+                  "    {",
+                  "        email: \"stas@\",",
+                  "        message: \"Email is incorrect\"",
+                  "    },",
+                  "    {",
+                  "        email: \"@gmail.com\",",
+                  "        message: \"Email is incorrect\"",
+                  "    },",
+                  "    {",
+                  "        email: \"stas@gmailcom\",",
+                  "        message: \"Email is incorrect\"",
+                  "    },",
+                  "    {",
+                  "        email: \"stas qa@gmail.com\",",
+                  "        message: \"Email is incorrect\"",
+                  "    },",
+                  "    {",
+                  "        email: \"stas@@gmail.com\",",
+                  "        message: \"Email is incorrect\"",
+                  "    }",
+                  "];",
+                  "",
+                  "let index = Number(pm.environment.get(\"signupEmailIndex\") || 0);",
+                  "",
+                  "pm.environment.set(\"negativeEmail\", cases[index].email);",
+                  "pm.environment.set(\"expectedMessage\", cases[index].message);",
+                  "",
+                  "index++;",
+                  "",
+                  "if (index >= cases.length) {",
+                  "    index = 0;",
+                  "}",
+                  "",
+                  "pm.environment.set(\"signupEmailIndex\", index);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Stas\",\n    \"lastName\": \"Demianenko\",\n    \"email\": \"{{negativeEmail}}\",\n    \"password\": \"{{oldPassword}}\",\n    \"repeatPassword\": \"{{oldPassword}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/signup",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "signup"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "02 - Change Profile",
+      "item": [
+        {
+          "name": "02 - Change Profile",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const requestBody = JSON.parse(pm.variables.replaceIn(pm.request.body.raw));",
+                  "const responseBody = pm.response.json();",
+                  "",
+                  "pm.test(\"Status code is 200\", () => {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Profile data is correct\", () => {",
+                  "    pm.expect(responseBody.data.name).to.eql(requestBody.name);",
+                  "    pm.expect(responseBody.data.lastName).to.eql(requestBody.lastName);",
+                  "    pm.expect(responseBody.data.country).to.eql(requestBody.country);",
+                  "    pm.expect(responseBody.data.dateBirth).to.eql(requestBody.dateBirth);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "const profilePhoto = `/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxATEBUQEBIVFhAVFRUXFhAWGBISEhYWGRYWFxkXFxYYHyggGBolHhUaITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy4mICYtMjAvLS8tLS0vLS0tLS0tLS8tLS0tLS0tLS0tLS0tLS0tKy0tLy0tLS0tLS0tLS0tLf/.../2Q==`;",
+                  "",
+                  "pm.environment.set(\"profilePhoto\", profilePhoto);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"photo\": \"{{profilePhoto}}\",\n  \"name\": \"Stanislav\",\n  \"lastName\": \"QA\",\n  \"country\": \"Ukraine\",\n  \"dateBirth\": \"2000-01-01T00:00:00.000Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/profile",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "NEG - Profile Validation",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "const cases = [",
+                  "    123,",
+                  "    true,",
+                  "    { year: 2000 }",
+                  "];",
+                  "",
+                  "let index = Number(pm.environment.get(\"profileValidationIndex\") || 0);",
+                  "",
+                  "pm.environment.set(\"profileName\", JSON.stringify(\"Stanislav\"));",
+                  "pm.environment.set(\"profileLastName\", \"QA\");",
+                  "pm.environment.set(\"profileCountry\", \"Ukraine\");",
+                  "pm.environment.set(\"profileDateBirth\", JSON.stringify(cases[index]));",
+                  "",
+                  "index++;",
+                  "",
+                  "if (index >= cases.length) {",
+                  "    index = 0;",
+                  "}",
+                  "",
+                  "pm.environment.set(\"profileValidationIndex\", index);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const responseBody = pm.response.json();",
+                  "",
+                  "pm.test(\"Status code is 200\", () => {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Invalid dateBirth type is not applied\", () => {",
+                  "    pm.expect(responseBody.data.dateBirth).to.be.a(\"string\");",
+                  "});",
+                  "",
+                  "const index = Number(pm.environment.get(\"profileValidationIndex\"));",
+                  "",
+                  "if (index !== 0) {",
+                  "    pm.execution.setNextRequest(\"NEG - Profile Validation\");",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": {{profileName}},\n  \"lastName\": \"{{profileLastName}}\",\n  \"country\": \"{{profileCountry}}\",\n  \"dateBirth\": {{profileDateBirth}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/profile",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "03 - Change Password",
+      "item": [
+        {
+          "name": "03 - Change Password",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const responseBody = pm.response.json();",
+                  "const savedUserId = Number(pm.environment.get(\"userId\"));",
+                  "",
+                  "pm.test(\"Status code is 200\", () => {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"UserId is correct\", () => {",
+                  "    pm.expect(responseBody.data.userId).to.eql(savedUserId);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "const newPassword = `Qa${Date.now().toString().slice(-8)}!`;",
+                  "",
+                  "pm.environment.set(\"newPassword\", newPassword);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"oldPassword\": \"{{oldPassword}}\",\n  \"password\": \"{{newPassword}}\",\n  \"repeatPassword\": \"{{newPassword}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/password",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                "password"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "04 - Logout",
+      "item": [
+        {
+          "name": "04 - Logout",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const responseBody = pm.response.json();",
+                  "",
+                  "pm.test(\"Status code is 200\", () => {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Logout status is ok\", () => {",
+                  "    pm.expect(responseBody.status).to.eql(\"ok\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/auth/logout",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Negative Profile Tests",
+      "item": [
+        {
+          "name": "NEG PROFILE 01 - Not Authenticated",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const responseBody = pm.response.json();",
+                  "",
+                  "pm.test(\"Status code is 401\", () => {",
+                  "    pm.response.to.have.status(401);",
+                  "});",
+                  "",
+                  "pm.test(\"User is not authenticated\", () => {",
+                  "    pm.expect(responseBody.message).to.eql(\"Not authenticated\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"S\",\n  \"lastName\": \"QA\",\n  \"country\": \"Ukraine\",\n  \"dateBirth\": \"2000-01-01T00:00:00.000Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/profile",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "NEG PROFILE 02 - Invalid JSON",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const responseBody = pm.response.json();",
+                  "",
+                  "pm.test(\"Status code is 500\", () => {",
+                  "    pm.response.to.have.status(500);",
+                  "});",
+                  "",
+                  "pm.test(\"Invalid JSON error message\", () => {",
+                  "    pm.expect(responseBody.message).to.eql(\"Unexpected string in JSON at position 21\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Stas\"\n  \"lastName\": \"QA\",\n  \"country\": \"Ukraine\",\n  \"dateBirth\": \"2000-01-01T00:00:00.000Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/profile",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "05 - Login",
+      "item": [
+        {
+          "name": "05 - Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const responseBody = pm.response.json();",
+                  "const savedUserId = Number(pm.environment.get(\"userId\"));",
+                  "",
+                  "pm.test(\"Status code is 200\", () => {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Login userId is correct\", () => {",
+                  "    pm.expect(responseBody.data.userId).to.eql(savedUserId);",
+                  "});",
+                  "",
+                  "pm.test(\"Login status is ok\", () => {",
+                  "    pm.expect(responseBody.status).to.eql(\"ok\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{userEmail}}\",\n  \"password\": \"{{newPassword}}\",\n  \"remember\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/signin",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "signin"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "06 - Add Car",
+      "item": [
+        {
+          "name": "06 - Add Car",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const responseBody = pm.response.json();",
+                  "",
+                  "pm.environment.set(\"carId\", responseBody.data.id);",
+                  "",
+                  "pm.test(\"Status code is 201\", () => {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Car data is correct\", () => {",
+                  "    pm.expect(responseBody.data.carBrandId).to.eql(2);",
+                  "    pm.expect(responseBody.data.carModelId).to.eql(8);",
+                  "    pm.expect(responseBody.data.mileage).to.eql(50000);",
+                  "});",
+                  "",
+                  "pm.test(\"CarId is saved\", () => {",
+                  "    pm.expect(Number(pm.environment.get(\"carId\"))).to.eql(responseBody.data.id);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"carBrandId\": 2,\n  \"carModelId\": 8,\n  \"mileage\": 50000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/cars",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cars"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "GET - Car Brands",
+      "item": [
+        {
+          "name": "GET - Car Brands",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/cars/brands",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cars",
+                "brands"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "GET - BMW Models",
+      "item": [
+        {
+          "name": "GET - BMW Models",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/cars/models?carBrandId=2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cars",
+                "models"
+              ],
+              "query": [
+                {
+                  "key": "carBrandId",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "07 - Get User Cars",
+      "item": [
+        {
+          "name": "07 - Get User Cars",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/cars",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cars"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "08 - Add Expense",
+      "item": [
+        {
+          "name": "08 - Add Expense",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "const currentMileage = Number(pm.environment.get(\"expenseMileage\") || 50000);",
+                  "",
+                  "pm.environment.set(\"expenseMileage\", currentMileage + 100);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const responseBody = pm.response.json();",
+                  "const mileage = Number(pm.environment.get(\"expenseMileage\"));",
+                  "const carId = Number(pm.environment.get(\"carId\"));",
+                  "",
+                  "pm.test(\"Status code is 200\", () => {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Expense mileage is correct\", () => {",
+                  "    pm.expect(responseBody.data.mileage).to.eql(mileage);",
+                  "});",
+                  "",
+                  "pm.test(\"CarId is correct\", () => {",
+                  "    pm.expect(responseBody.data.carId).to.eql(carId);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"carId\": {{carId}},\n  \"reportedAt\": \"{{$isoTimestamp}}\",\n  \"mileage\": {{expenseMileage}},\n  \"liters\": 40,\n  \"totalCost\": 60,\n  \"forceMileage\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/expenses",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "expenses"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "09 - Delete User",
+      "item": [
+        {
+          "name": "09 - Delete User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const responseBody = pm.response.json();",
+                  "",
+                  "pm.test(\"Status code is 200\", () => {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Delete status is ok\", () => {",
+                  "    pm.expect(responseBody.status).to.eql(\"ok\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
