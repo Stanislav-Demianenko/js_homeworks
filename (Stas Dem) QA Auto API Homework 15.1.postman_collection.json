@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "68b1834a-dc11-44e8-9dac-8ca5eafdb808",
+    "_postman_id": "99a1da67-fb22-4af1-875a-23f822ecef8c",
     "name": "QA Auto API Homework 15.1",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "57759258",
-    "_collection_link": "https://go.postman.co/collection/57759258-68b1834a-dc11-44e8-9dac-8ca5eafdb808?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/57759258-99a1da67-fb22-4af1-875a-23f822ecef8c?source=collection_link"
   },
   "item": [
     {
@@ -16,55 +16,19 @@
             {
               "listen": "test",
               "script": {
-                "exec": [
-                  "const requestBody = JSON.parse(pm.variables.replaceIn(pm.request.body.raw));",
-                  "const responseBody = pm.response.json();",
-                  "",
-                  "pm.environment.set(\"oldPassword\", requestBody.password);",
-                  "pm.environment.set(\"userEmail\", requestBody.email);",
-                  "pm.environment.set(\"userId\", responseBody.data.userId);",
-                  "",
-                  "pm.test(\"Status code is 201\", () => {",
-                  "    pm.response.to.have.status(201);",
-                  "});",
-                  "",
-                  "pm.test(\"Email is valid\", () => {",
-                  "    pm.expect(requestBody.email).to.match(/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/);",
-                  "});",
-                  "",
-                  "pm.test(\"JSON schema is valid\", () => {",
-                  "    pm.response.to.have.jsonSchema({",
-                  "        type: \"object\",",
-                  "        required: [\"status\", \"data\"],",
-                  "        properties: {",
-                  "            status: { type: \"string\" },",
-                  "            data: {",
-                  "                type: \"object\",",
-                  "                required: [\"userId\"],",
-                  "                properties: {",
-                  "                    userId: { type: \"integer\" }",
-                  "                }",
-                  "            }",
-                  "        }",
-                  "    });",
-                  "});"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const requestBody = JSON.parse(pm.variables.replaceIn(pm.request.body.raw));\nconst body = pm.response.json();\n\npm.environment.set(\"oldPassword\", requestBody.password);\npm.environment.set(\"userEmail\", requestBody.email);\npm.environment.set(\"userId\", body.data.userId);\n\npm.test(\"Status code is 201\", () => {\n    pm.response.to.have.status(201);\n});\n\npm.test(\"Email is valid\", () => {\n    pm.expect(requestBody.email).to.match(/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/);\n});\n\npm.test(\"JSON schema is valid\", () => {\n    pm.response.to.have.jsonSchema({\n        type: \"object\",\n        required: [\"status\", \"data\"],\n        properties: {\n            status: { type: \"string\" },\n            data: {\n                type: \"object\",\n                required: [\"userId\"],\n                properties: {\n                    userId: { type: \"integer\" }\n                }\n            }\n        }\n    });\n});"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
-                "exec": [
-                  "const uniqueEmail = `stas.qa.${Date.now()}@gmail.com`;",
-                  "",
-                  "pm.environment.set(\"userEmail\", uniqueEmail);"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const uniqueEmail = `stas.qa.${Date.now()}@gmail.com`;\nconst password = \"Qa12345678!\";\n\npm.environment.set(\"userEmail\", uniqueEmail);\npm.environment.set(\"oldPassword\", password);"
+                ]
               }
             }
           ],
@@ -104,80 +68,19 @@
             {
               "listen": "test",
               "script": {
-                "exec": [
-                  "const responseBody = pm.response.json();",
-                  "const expectedMessage = pm.variables.get(\"expectedMessage\");",
-                  "",
-                  "pm.test(\"Status code is 400\", () => {",
-                  "    pm.response.to.have.status(400);",
-                  "});",
-                  "",
-                  "pm.test(\"Correct error message\", () => {",
-                  "    pm.expect(responseBody.message).to.eql(expectedMessage);",
-                  "});",
-                  "",
-                  "const index = Number(pm.environment.get(\"signupEmailIndex\"));",
-                  "",
-                  "if (index !== 0) {",
-                  "    pm.execution.setNextRequest(\"NEG - Signup Validation\");",
-                  "}"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const body = pm.response.json();\nconst expectedMessage = pm.variables.get(\"expectedMessage\");\nconst nextIndex = Number(pm.environment.get(\"signupEmailIndex\"));\n\npm.test(\"Status code is 400\", () => {\n    pm.response.to.have.status(400);\n});\n\npm.test(\"Correct error message\", () => {\n    pm.expect(body.message).to.eql(expectedMessage);\n});\n\nif (nextIndex !== 0) {\n    pm.execution.setNextRequest(\"NEG - Signup Validation\");\n}"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
-                "exec": [
-                  "const cases = [",
-                  "    {",
-                  "        email: \"\",",
-                  "        message: \"\\\"email\\\" is not allowed to be empty\"",
-                  "    },",
-                  "    {",
-                  "        email: \"stas.gmail.com\",",
-                  "        message: \"Email is incorrect\"",
-                  "    },",
-                  "    {",
-                  "        email: \"stas@\",",
-                  "        message: \"Email is incorrect\"",
-                  "    },",
-                  "    {",
-                  "        email: \"@gmail.com\",",
-                  "        message: \"Email is incorrect\"",
-                  "    },",
-                  "    {",
-                  "        email: \"stas@gmailcom\",",
-                  "        message: \"Email is incorrect\"",
-                  "    },",
-                  "    {",
-                  "        email: \"stas qa@gmail.com\",",
-                  "        message: \"Email is incorrect\"",
-                  "    },",
-                  "    {",
-                  "        email: \"stas@@gmail.com\",",
-                  "        message: \"Email is incorrect\"",
-                  "    }",
-                  "];",
-                  "",
-                  "let index = Number(pm.environment.get(\"signupEmailIndex\") || 0);",
-                  "",
-                  "pm.environment.set(\"negativeEmail\", cases[index].email);",
-                  "pm.environment.set(\"expectedMessage\", cases[index].message);",
-                  "",
-                  "index++;",
-                  "",
-                  "if (index >= cases.length) {",
-                  "    index = 0;",
-                  "}",
-                  "",
-                  "pm.environment.set(\"signupEmailIndex\", index);"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const cases = [\n    {\n        email: \"\",\n        message: \"\\\"email\\\" is not allowed to be empty\"\n    },\n    {\n        email: \"stas.gmail.com\",\n        message: \"Email is incorrect\"\n    },\n    {\n        email: \"stas@\",\n        message: \"Email is incorrect\"\n    },\n    {\n        email: \"@gmail.com\",\n        message: \"Email is incorrect\"\n    },\n    {\n        email: \"stas@gmailcom\",\n        message: \"Email is incorrect\"\n    },\n    {\n        email: \"stas qa@gmail.com\",\n        message: \"Email is incorrect\"\n    },\n    {\n        email: \"stas@@gmail.com\",\n        message: \"Email is incorrect\"\n    }\n];\n\nlet index = Number(pm.environment.get(\"signupEmailIndex\") || 0);\n\npm.environment.set(\"negativeEmail\", cases[index].email);\npm.environment.set(\"expectedMessage\", cases[index].message);\n\nindex++;\n\nif (index >= cases.length) {\n    index = 0;\n}\n\npm.environment.set(\"signupEmailIndex\", index);"
+                ]
               }
             }
           ],
@@ -217,37 +120,19 @@
             {
               "listen": "test",
               "script": {
-                "exec": [
-                  "const requestBody = JSON.parse(pm.variables.replaceIn(pm.request.body.raw));",
-                  "const responseBody = pm.response.json();",
-                  "",
-                  "pm.test(\"Status code is 200\", () => {",
-                  "    pm.response.to.have.status(200);",
-                  "});",
-                  "",
-                  "pm.test(\"Profile data is correct\", () => {",
-                  "    pm.expect(responseBody.data.name).to.eql(requestBody.name);",
-                  "    pm.expect(responseBody.data.lastName).to.eql(requestBody.lastName);",
-                  "    pm.expect(responseBody.data.country).to.eql(requestBody.country);",
-                  "    pm.expect(responseBody.data.dateBirth).to.eql(requestBody.dateBirth);",
-                  "});"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const requestBody = JSON.parse(pm.variables.replaceIn(pm.request.body.raw));\nconst body = pm.response.json();\n\npm.test(\"Status code is 200\", () => {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Profile data is correct\", () => {\n    pm.expect(body.data.name).to.eql(requestBody.name);\n    pm.expect(body.data.lastName).to.eql(requestBody.lastName);\n    pm.expect(body.data.country).to.eql(requestBody.country);\n    pm.expect(body.data.dateBirth).to.eql(requestBody.dateBirth);\n});"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
-                "exec": [
-                  "const profilePhoto = `/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxATEBUQEBIVFhAVFRUXFhAWGBISEhYWGRYWFxkXFxYYHyggGBolHhUaITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy4mICYtMjAvLS8tLS0vLS0tLS0tLS8tLS0tLS0tLS0tLS0tLS0tKy0tLy0tLS0tLS0tLS0tLf/.../2Q==`;",
-                  "",
-                  "pm.environment.set(\"profilePhoto\", profilePhoto);"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const profilePhoto = `/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxATEBUQEBIVFhAVFRUXFhAWGBISEhYWGRYWFxkXFxYYHyggGBolHhUaITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy4mICYtMjAvLS8tLS0vLS0tLS0tLS8tLS0tLS0tLS0tLS0tLS0tKy0tLy0tLS0tLS0tLS0tLf/.../2Q==`;\n\npm.environment.set(\"profilePhoto\", profilePhoto);"
+                ]
               }
             }
           ],
@@ -282,56 +167,19 @@
             {
               "listen": "prerequest",
               "script": {
-                "exec": [
-                  "const cases = [",
-                  "    123,",
-                  "    true,",
-                  "    { year: 2000 }",
-                  "];",
-                  "",
-                  "let index = Number(pm.environment.get(\"profileValidationIndex\") || 0);",
-                  "",
-                  "pm.environment.set(\"profileName\", JSON.stringify(\"Stanislav\"));",
-                  "pm.environment.set(\"profileLastName\", \"QA\");",
-                  "pm.environment.set(\"profileCountry\", \"Ukraine\");",
-                  "pm.environment.set(\"profileDateBirth\", JSON.stringify(cases[index]));",
-                  "",
-                  "index++;",
-                  "",
-                  "if (index >= cases.length) {",
-                  "    index = 0;",
-                  "}",
-                  "",
-                  "pm.environment.set(\"profileValidationIndex\", index);"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const cases = [\n    123,\n    true,\n    { year: 2000 }\n];\n\nlet index = Number(pm.environment.get(\"profileValidationIndex\") || 0);\n\npm.environment.set(\"profileName\", JSON.stringify(\"Stanislav\"));\npm.environment.set(\"profileLastName\", \"QA\");\npm.environment.set(\"profileCountry\", \"Ukraine\");\npm.environment.set(\"profileDateBirth\", JSON.stringify(cases[index]));\n\nindex++;\n\nif (index >= cases.length) {\n    index = 0;\n}\n\npm.environment.set(\"profileValidationIndex\", index);"
+                ]
               }
             },
             {
               "listen": "test",
               "script": {
-                "exec": [
-                  "const responseBody = pm.response.json();",
-                  "",
-                  "pm.test(\"Status code is 200\", () => {",
-                  "    pm.response.to.have.status(200);",
-                  "});",
-                  "",
-                  "pm.test(\"Invalid dateBirth type is not applied\", () => {",
-                  "    pm.expect(responseBody.data.dateBirth).to.be.a(\"string\");",
-                  "});",
-                  "",
-                  "const index = Number(pm.environment.get(\"profileValidationIndex\"));",
-                  "",
-                  "if (index !== 0) {",
-                  "    pm.execution.setNextRequest(\"NEG - Profile Validation\");",
-                  "}"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const body = pm.response.json();\n\npm.test(\"Status code is 200\", () => {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Invalid dateBirth type is not applied\", () => {\n    pm.expect(body.data.dateBirth).to.be.a(\"string\");\n});\n\nconst index = Number(pm.environment.get(\"profileValidationIndex\"));\n\nif (index !== 0) {\n    pm.execution.setNextRequest(\"NEG - Profile Validation\");\n}"
+                ]
               }
             }
           ],
@@ -371,34 +219,19 @@
             {
               "listen": "test",
               "script": {
-                "exec": [
-                  "const responseBody = pm.response.json();",
-                  "const savedUserId = Number(pm.environment.get(\"userId\"));",
-                  "",
-                  "pm.test(\"Status code is 200\", () => {",
-                  "    pm.response.to.have.status(200);",
-                  "});",
-                  "",
-                  "pm.test(\"UserId is correct\", () => {",
-                  "    pm.expect(responseBody.data.userId).to.eql(savedUserId);",
-                  "});"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const body = pm.response.json();\nconst savedUserId = Number(pm.environment.get(\"userId\"));\n\npm.test(\"Status code is 200\", () => {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"UserId is correct\", () => {\n    pm.expect(body.data.userId).to.eql(savedUserId);\n});"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
-                "exec": [
-                  "const newPassword = `Qa${Date.now().toString().slice(-8)}!`;",
-                  "",
-                  "pm.environment.set(\"newPassword\", newPassword);"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const newPassword = `Qa${Date.now().toString().slice(-8)}!`;\n\npm.environment.set(\"newPassword\", newPassword);"
+                ]
               }
             }
           ],
@@ -438,20 +271,10 @@
             {
               "listen": "test",
               "script": {
-                "exec": [
-                  "const responseBody = pm.response.json();",
-                  "",
-                  "pm.test(\"Status code is 200\", () => {",
-                  "    pm.response.to.have.status(200);",
-                  "});",
-                  "",
-                  "pm.test(\"Logout status is ok\", () => {",
-                  "    pm.expect(responseBody.status).to.eql(\"ok\");",
-                  "});"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const body = pm.response.json();\n\npm.test(\"Status code is 200\", () => {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Logout status is ok\", () => {\n    pm.expect(body.status).to.eql(\"ok\");\n});"
+                ]
               }
             }
           ],
@@ -482,20 +305,10 @@
             {
               "listen": "test",
               "script": {
-                "exec": [
-                  "const responseBody = pm.response.json();",
-                  "",
-                  "pm.test(\"Status code is 401\", () => {",
-                  "    pm.response.to.have.status(401);",
-                  "});",
-                  "",
-                  "pm.test(\"User is not authenticated\", () => {",
-                  "    pm.expect(responseBody.message).to.eql(\"Not authenticated\");",
-                  "});"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const body = pm.response.json();\n\npm.test(\"Status code is 401\", () => {\n    pm.response.to.have.status(401);\n});\n\npm.test(\"User is not authenticated\", () => {\n    pm.expect(body.message).to.eql(\"Not authenticated\");\n});"
+                ]
               }
             }
           ],
@@ -530,20 +343,10 @@
             {
               "listen": "test",
               "script": {
-                "exec": [
-                  "const responseBody = pm.response.json();",
-                  "",
-                  "pm.test(\"Status code is 500\", () => {",
-                  "    pm.response.to.have.status(500);",
-                  "});",
-                  "",
-                  "pm.test(\"Invalid JSON error message\", () => {",
-                  "    pm.expect(responseBody.message).to.eql(\"Unexpected string in JSON at position 21\");",
-                  "});"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const body = pm.response.json();\n\npm.test(\"Status code is 500\", () => {\n    pm.response.to.have.status(500);\n});\n\npm.test(\"Invalid JSON error message\", () => {\n    pm.expect(body.message).to.eql(\"Unexpected string in JSON at position 21\");\n});"
+                ]
               }
             }
           ],
@@ -583,25 +386,10 @@
             {
               "listen": "test",
               "script": {
-                "exec": [
-                  "const responseBody = pm.response.json();",
-                  "const savedUserId = Number(pm.environment.get(\"userId\"));",
-                  "",
-                  "pm.test(\"Status code is 200\", () => {",
-                  "    pm.response.to.have.status(200);",
-                  "});",
-                  "",
-                  "pm.test(\"Login userId is correct\", () => {",
-                  "    pm.expect(responseBody.data.userId).to.eql(savedUserId);",
-                  "});",
-                  "",
-                  "pm.test(\"Login status is ok\", () => {",
-                  "    pm.expect(responseBody.status).to.eql(\"ok\");",
-                  "});"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const body = pm.response.json();\nconst savedUserId = Number(pm.environment.get(\"userId\"));\n\npm.test(\"Status code is 200\", () => {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Login userId is correct\", () => {\n    pm.expect(body.data.userId).to.eql(savedUserId);\n});\n\npm.test(\"Login status is ok\", () => {\n    pm.expect(body.status).to.eql(\"ok\");\n});"
+                ]
               }
             }
           ],
@@ -641,28 +429,10 @@
             {
               "listen": "test",
               "script": {
-                "exec": [
-                  "const responseBody = pm.response.json();",
-                  "",
-                  "pm.environment.set(\"carId\", responseBody.data.id);",
-                  "",
-                  "pm.test(\"Status code is 201\", () => {",
-                  "    pm.response.to.have.status(201);",
-                  "});",
-                  "",
-                  "pm.test(\"Car data is correct\", () => {",
-                  "    pm.expect(responseBody.data.carBrandId).to.eql(2);",
-                  "    pm.expect(responseBody.data.carModelId).to.eql(8);",
-                  "    pm.expect(responseBody.data.mileage).to.eql(50000);",
-                  "});",
-                  "",
-                  "pm.test(\"CarId is saved\", () => {",
-                  "    pm.expect(Number(pm.environment.get(\"carId\"))).to.eql(responseBody.data.id);",
-                  "});"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const body = pm.response.json();\n\npm.environment.set(\"carId\", body.data.id);\n\npm.test(\"Status code is 201\", () => {\n    pm.response.to.have.status(201);\n});\n\npm.test(\"Car data is correct\", () => {\n    pm.expect(body.data.carBrandId).to.eql(2);\n    pm.expect(body.data.carModelId).to.eql(8);\n    pm.expect(body.data.mileage).to.eql(50000);\n});\n\npm.test(\"CarId is saved\", () => {\n    pm.expect(Number(pm.environment.get(\"carId\"))).to.eql(body.data.id);\n});"
+                ]
               }
             }
           ],
@@ -775,39 +545,19 @@
             {
               "listen": "prerequest",
               "script": {
-                "exec": [
-                  "const currentMileage = Number(pm.environment.get(\"expenseMileage\") || 50000);",
-                  "",
-                  "pm.environment.set(\"expenseMileage\", currentMileage + 100);"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const currentMileage = Number(pm.environment.get(\"expenseMileage\") || 50000);\n\npm.environment.set(\"expenseMileage\", currentMileage + 100);"
+                ]
               }
             },
             {
               "listen": "test",
               "script": {
-                "exec": [
-                  "const responseBody = pm.response.json();",
-                  "const mileage = Number(pm.environment.get(\"expenseMileage\"));",
-                  "const carId = Number(pm.environment.get(\"carId\"));",
-                  "",
-                  "pm.test(\"Status code is 200\", () => {",
-                  "    pm.response.to.have.status(200);",
-                  "});",
-                  "",
-                  "pm.test(\"Expense mileage is correct\", () => {",
-                  "    pm.expect(responseBody.data.mileage).to.eql(mileage);",
-                  "});",
-                  "",
-                  "pm.test(\"CarId is correct\", () => {",
-                  "    pm.expect(responseBody.data.carId).to.eql(carId);",
-                  "});"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const body = pm.response.json();\nconst mileage = Number(pm.environment.get(\"expenseMileage\"));\nconst carId = Number(pm.environment.get(\"carId\"));\n\npm.test(\"Status code is 200\", () => {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Expense mileage is correct\", () => {\n    pm.expect(body.data.mileage).to.eql(mileage);\n});\n\npm.test(\"CarId is correct\", () => {\n    pm.expect(body.data.carId).to.eql(carId);\n});"
+                ]
               }
             }
           ],
@@ -846,20 +596,10 @@
             {
               "listen": "test",
               "script": {
-                "exec": [
-                  "const responseBody = pm.response.json();",
-                  "",
-                  "pm.test(\"Status code is 200\", () => {",
-                  "    pm.response.to.have.status(200);",
-                  "});",
-                  "",
-                  "pm.test(\"Delete status is ok\", () => {",
-                  "    pm.expect(responseBody.status).to.eql(\"ok\");",
-                  "});"
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "const body = pm.response.json();\n\npm.test(\"Status code is 200\", () => {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Delete status is ok\", () => {\n    pm.expect(body.status).to.eql(\"ok\");\n});"
+                ]
               }
             }
           ],
