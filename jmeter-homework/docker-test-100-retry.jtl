@@ -1,0 +1,501 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1791536589559,11,GET All Characters,200,OK,QA Pro REST API Load Test 1-6,text,true,,340,129,7,7,http://localhost:3001/characters,10,0,0
+1791536589545,25,GET All Characters,200,OK,QA Pro REST API Load Test 1-1,text,true,,340,129,7,7,http://localhost:3001/characters,24,0,9
+1791536589545,25,GET All Characters,200,OK,QA Pro REST API Load Test 1-2,text,true,,340,129,7,7,http://localhost:3001/characters,23,0,9
+1791536589545,25,GET All Characters,200,OK,QA Pro REST API Load Test 1-3,text,true,,340,129,7,7,http://localhost:3001/characters,23,0,9
+1791536589545,25,GET All Characters,200,OK,QA Pro REST API Load Test 1-4,text,true,,340,129,7,7,http://localhost:3001/characters,23,0,9
+1791536589548,22,GET All Characters,200,OK,QA Pro REST API Load Test 1-5,text,true,,340,129,7,7,http://localhost:3001/characters,20,0,6
+1791536589569,3,GET All Characters,200,OK,QA Pro REST API Load Test 1-7,text,true,,340,129,7,7,http://localhost:3001/characters,3,0,0
+1791536589576,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-8,text,true,,608,129,8,8,http://localhost:3001/characters,1,0,0
+1791536589571,4,POST Create Character.,201,Created,QA Pro REST API Load Test 1-4,text,true,,277,223,8,8,http://localhost:3001/character,4,0,0
+1791536589572,4,POST Create Character.,201,Created,QA Pro REST API Load Test 1-7,text,true,,278,223,8,8,http://localhost:3001/character,4,0,0
+1791536589571,4,POST Create Character.,201,Created,QA Pro REST API Load Test 1-1,text,true,,277,223,8,8,http://localhost:3001/character,4,0,0
+1791536589571,4,POST Create Character.,201,Created,QA Pro REST API Load Test 1-6,text,true,,277,223,8,8,http://localhost:3001/character,4,0,0
+1791536589571,4,POST Create Character.,201,Created,QA Pro REST API Load Test 1-2,text,true,,277,223,7,7,http://localhost:3001/character,4,0,0
+1791536589578,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-8,text,true,,278,223,8,8,http://localhost:3001/character,1,0,0
+1791536589571,3,POST Create Character.,201,Created,QA Pro REST API Load Test 1-5,text,true,,277,223,7,7,http://localhost:3001/character,3,0,0
+1791536589571,3,POST Create Character.,201,Created,QA Pro REST API Load Test 1-3,text,true,,277,223,7,7,http://localhost:3001/character,3,0,0
+1791536589587,2,GET Character By ID,200,OK,QA Pro REST API Load Test 1-5,text,true,,272,130,9,9,http://localhost:3001/character/4,2,0,0
+1791536589587,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-1,text,true,,272,130,9,9,http://localhost:3001/character/9,1,0,0
+1791536589587,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-6,text,true,,272,130,9,9,http://localhost:3001/character/8,1,0,0
+1791536589587,3,GET Character By ID,200,OK,QA Pro REST API Load Test 1-8,text,true,,273,131,9,9,http://localhost:3001/character/11,3,0,0
+1791536589587,2,GET Character By ID,200,OK,QA Pro REST API Load Test 1-4,text,true,,272,130,9,9,http://localhost:3001/character/7,2,0,0
+1791536589587,3,GET Character By ID,200,OK,QA Pro REST API Load Test 1-2,text,true,,272,130,9,9,http://localhost:3001/character/6,3,0,0
+1791536589587,3,GET Character By ID,200,OK,QA Pro REST API Load Test 1-7,text,true,,273,131,9,9,http://localhost:3001/character/10,3,0,0
+1791536589589,2,PUT Update Character,200,OK,QA Pro REST API Load Test 1-6,text,true,,272,224,9,9,http://localhost:3001/character/8,2,0,0
+1791536589590,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-1,text,true,,272,224,9,9,http://localhost:3001/character/9,1,0,0
+1791536589589,3,PUT Update Character,200,OK,QA Pro REST API Load Test 1-5,text,true,,272,224,9,9,http://localhost:3001/character/4,3,0,0
+1791536589590,2,PUT Update Character,200,OK,QA Pro REST API Load Test 1-8,text,true,,273,225,9,9,http://localhost:3001/character/11,2,0,0
+1791536589587,6,GET Character By ID,200,OK,QA Pro REST API Load Test 1-3,text,true,,272,130,9,9,http://localhost:3001/character/5,6,0,0
+1791536589591,2,DELETE Character,200,OK,QA Pro REST API Load Test 1-6,text,true,,293,216,9,9,http://localhost:3001/character/8,2,0,0
+1791536589592,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-1,text,true,,293,216,9,9,http://localhost:3001/character/9,1,0,0
+1791536589592,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-5,text,true,,293,216,9,9,http://localhost:3001/character/4,1,0,0
+1791536589590,3,PUT Update Character,200,OK,QA Pro REST API Load Test 1-2,text,true,,272,224,9,9,http://localhost:3001/character/6,3,0,0
+1791536589590,4,PUT Update Character,200,OK,QA Pro REST API Load Test 1-4,text,true,,272,224,9,9,http://localhost:3001/character/7,4,0,0
+1791536589590,4,PUT Update Character,200,OK,QA Pro REST API Load Test 1-7,text,true,,273,225,9,9,http://localhost:3001/character/10,4,0,0
+1791536589588,6,GET All Characters,200,OK,QA Pro REST API Load Test 1-9,text,true,,533,129,9,9,http://localhost:3001/characters,6,0,0
+1791536589593,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-8,text,true,,293,217,9,9,http://localhost:3001/character/11,1,0,0
+1791536589593,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-3,text,true,,272,224,9,9,http://localhost:3001/character/5,1,0,0
+1791536589594,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-2,text,true,,293,216,7,7,http://localhost:3001/character/6,1,0,0
+1791536589594,2,DELETE Character,200,OK,QA Pro REST API Load Test 1-4,text,true,,293,216,4,4,http://localhost:3001/character/7,2,0,0
+1791536589594,2,DELETE Character,200,OK,QA Pro REST API Load Test 1-7,text,true,,293,217,3,3,http://localhost:3001/character/10,2,0,0
+1791536589594,3,DELETE Character,200,OK,QA Pro REST API Load Test 1-3,text,true,,293,216,3,3,http://localhost:3001/character/5,3,0,0
+1791536589594,3,POST Create Character.,201,Created,QA Pro REST API Load Test 1-9,text,true,,277,223,3,3,http://localhost:3001/character,3,0,0
+1791536589597,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-9,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589598,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-9,text,true,,272,224,2,2,http://localhost:3001/character/4,1,0,0
+1791536589599,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-10,text,true,,340,129,2,2,http://localhost:3001/characters,1,0,0
+1791536589600,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-9,text,true,,293,216,2,2,http://localhost:3001/character/4,0,0,0
+1791536589601,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-10,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589602,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-10,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589603,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-10,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589604,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-10,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589605,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-11,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536589607,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-11,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589608,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-11,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589609,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-11,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536589610,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-11,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536589619,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-12,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536589620,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-12,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589622,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-12,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589622,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-12,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589624,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-12,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536589629,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-13,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536589631,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-13,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589632,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-13,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589633,2,PUT Update Character,200,OK,QA Pro REST API Load Test 1-13,text,true,,272,224,2,2,http://localhost:3001/character/4,2,0,0
+1791536589635,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-14,text,true,,378,129,2,2,http://localhost:3001/characters,2,0,0
+1791536589636,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-13,text,true,,293,216,2,2,http://localhost:3001/character/4,1,0,0
+1791536589637,2,POST Create Character.,201,Created,QA Pro REST API Load Test 1-14,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589639,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-14,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589640,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-14,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589641,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-14,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536589644,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-15,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536589646,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-15,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536589647,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-15,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589647,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-15,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589648,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-15,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536589655,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-16,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536589657,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-16,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536589658,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-16,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589658,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-16,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589659,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-16,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589665,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-17,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536589667,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-17,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536589668,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-17,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589668,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-17,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589669,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-17,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589679,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-18,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536589681,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-18,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589682,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-18,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589683,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-18,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536589683,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-18,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589688,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-19,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536589690,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-19,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589691,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-19,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589692,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-19,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536589693,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-19,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536589694,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-20,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536589695,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-20,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589696,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-20,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589696,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-20,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589697,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-20,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589704,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-21,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536589706,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-21,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536589706,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-21,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589707,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-21,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536589708,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-21,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536589715,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-22,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536589717,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-22,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589718,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-22,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589719,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-22,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589720,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-22,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536589725,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-23,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536589727,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-23,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536589727,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-23,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589728,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-23,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536589729,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-23,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536589735,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-24,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536589737,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-24,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589738,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-24,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589739,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-24,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589740,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-24,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536589746,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-25,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536589748,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-25,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536589749,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-25,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589749,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-25,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589750,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-25,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589759,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-26,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536589761,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-26,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589762,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-26,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589762,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-26,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589763,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-26,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589765,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-27,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536589767,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-27,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589768,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-27,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589769,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-27,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589770,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-27,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589776,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-28,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536589777,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-28,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589778,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-28,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589779,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-28,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536589780,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-28,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536589785,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-29,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536589787,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-29,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589788,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-29,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589789,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-29,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536589789,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-29,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589799,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-30,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536589801,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-30,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536589802,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-30,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589802,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-30,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589803,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-30,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589805,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-31,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536589807,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-31,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536589808,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-31,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589808,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-31,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589809,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-31,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536589819,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-32,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536589821,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-32,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589822,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-32,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589823,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-32,text,true,,272,224,2,2,http://localhost:3001/character/4,1,0,0
+1791536589824,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-32,text,true,,293,216,2,2,http://localhost:3001/character/4,0,0,0
+1791536589824,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-33,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536589826,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-33,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536589827,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-33,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589827,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-33,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589828,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-33,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589835,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-34,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536589837,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-34,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589838,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-34,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589839,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-34,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536589839,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-34,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589848,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-35,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536589850,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-35,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589851,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-35,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589852,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-35,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589853,2,DELETE Character,200,OK,QA Pro REST API Load Test 1-35,text,true,,293,216,1,1,http://localhost:3001/character/4,2,0,0
+1791536589859,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-36,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536589860,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-36,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589862,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-36,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589862,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-36,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589863,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-36,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589865,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-37,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536589866,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-37,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589867,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-37,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589868,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-37,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589869,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-37,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536589875,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-38,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536589877,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-38,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589878,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-38,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589878,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-38,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589879,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-38,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589885,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-39,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536589887,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-39,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536589888,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-39,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589888,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-39,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589889,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-39,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589897,3,GET All Characters,200,OK,QA Pro REST API Load Test 1-40,text,true,,340,129,1,1,http://localhost:3001/characters,3,0,1
+1791536589900,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-40,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589902,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-40,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589903,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-40,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589904,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-40,text,true,,293,216,2,2,http://localhost:3001/character/4,0,0,0
+1791536589904,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-41,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536589906,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-41,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589907,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-41,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589908,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-41,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536589908,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-41,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589916,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-42,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536589918,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-42,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589919,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-42,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589920,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-42,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589921,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-42,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589928,3,GET All Characters,200,OK,QA Pro REST API Load Test 1-43,text,true,,340,129,1,1,http://localhost:3001/characters,3,0,1
+1791536589931,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-43,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589932,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-43,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589933,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-43,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589934,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-43,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589939,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-44,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536589941,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-44,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589942,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-44,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589943,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-44,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589944,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-44,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536589948,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-45,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536589950,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-45,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589951,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-45,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589951,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-45,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589952,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-45,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536589958,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-46,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536589960,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-46,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589961,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-46,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536589961,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-46,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589962,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-46,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589968,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-47,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536589971,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-47,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536589971,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-47,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589972,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-47,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589973,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-47,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536589979,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-48,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536589981,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-48,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589982,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-48,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589983,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-48,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536589984,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-48,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536589988,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-49,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536589990,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-49,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589991,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-49,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589992,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-49,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536589992,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-49,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536589994,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-50,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536589995,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-50,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536589996,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-50,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536589997,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-50,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536589998,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-50,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590005,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-51,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590007,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-51,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590008,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-51,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590009,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-51,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590010,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-51,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590019,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-52,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590021,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-52,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590022,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-52,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590023,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-52,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590024,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-52,text,true,,293,216,2,2,http://localhost:3001/character/4,1,0,0
+1791536590025,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-53,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536590026,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-53,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590027,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-53,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590028,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-53,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590029,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-53,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590038,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-54,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536590040,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-54,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590041,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-54,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590041,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-54,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590042,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-54,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590045,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-55,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536590047,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-55,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590048,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-55,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590048,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-55,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590049,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-55,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590056,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-56,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536590058,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-56,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536590059,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-56,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590059,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-56,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590060,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-56,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590066,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-57,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590068,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-57,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590070,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-57,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590071,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-57,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590072,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-57,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590078,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-58,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536590079,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-58,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590080,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-58,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590081,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-58,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536590081,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-58,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590088,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-59,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536590090,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-59,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590091,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-59,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590092,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-59,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590093,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-59,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590099,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-60,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590101,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-60,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590102,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-60,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590103,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-60,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536590104,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-60,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590109,3,GET All Characters,200,OK,QA Pro REST API Load Test 1-61,text,true,,340,129,1,1,http://localhost:3001/characters,3,0,1
+1791536590112,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-61,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590113,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-61,text,true,,272,130,2,2,http://localhost:3001/character/4,1,0,0
+1791536590114,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-61,text,true,,272,224,2,2,http://localhost:3001/character/4,1,0,0
+1791536590114,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-62,text,true,,378,129,2,2,http://localhost:3001/characters,1,0,0
+1791536590115,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-61,text,true,,293,216,2,2,http://localhost:3001/character/4,1,0,0
+1791536590115,2,POST Create Character.,201,Created,QA Pro REST API Load Test 1-62,text,true,,277,223,1,1,http://localhost:3001/character,2,0,0
+1791536590117,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-62,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590118,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-62,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590119,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-62,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590128,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-63,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590131,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-63,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536590131,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-63,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590132,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-63,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590133,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-63,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590138,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-64,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590140,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-64,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590141,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-64,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590142,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-64,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590143,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-64,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590148,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-65,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536590150,2,POST Create Character.,201,Created,QA Pro REST API Load Test 1-65,text,true,,277,223,1,1,http://localhost:3001/character,2,0,0
+1791536590152,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-65,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590153,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-65,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590154,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-65,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590159,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-66,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590161,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-66,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590162,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-66,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590163,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-66,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590164,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-66,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590169,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-67,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590171,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-67,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590173,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-67,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590173,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-67,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590174,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-67,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590179,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-68,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590181,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-68,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590182,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-68,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590183,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-68,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590184,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-68,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590187,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-69,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590189,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-69,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590190,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-69,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590191,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-69,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536590192,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-69,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590193,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-70,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590195,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-70,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590196,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-70,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590196,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-70,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590197,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-70,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590206,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-71,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590208,2,POST Create Character.,201,Created,QA Pro REST API Load Test 1-71,text,true,,277,223,1,1,http://localhost:3001/character,2,0,0
+1791536590210,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-71,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590210,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-71,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590211,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-71,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590218,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-72,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590220,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-72,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590221,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-72,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590222,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-72,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590223,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-72,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590224,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-73,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590226,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-73,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590227,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-73,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590228,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-73,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536590228,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-73,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590234,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-74,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590236,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-74,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590238,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-74,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590239,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-74,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536590239,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-74,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590248,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-75,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536590251,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-75,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536590252,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-75,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590252,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-75,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590253,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-75,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590258,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-76,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536590260,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-76,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590262,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-76,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590262,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-76,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590263,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-76,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590269,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-77,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590271,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-77,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590272,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-77,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590273,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-77,text,true,,272,224,2,2,http://localhost:3001/character/4,1,0,0
+1791536590274,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-77,text,true,,293,216,2,2,http://localhost:3001/character/4,1,0,0
+1791536590274,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-78,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590276,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-78,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590277,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-78,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590278,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-78,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536590278,2,DELETE Character,200,OK,QA Pro REST API Load Test 1-78,text,true,,293,216,1,1,http://localhost:3001/character/4,2,0,0
+1791536590284,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-79,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536590287,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-79,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536590288,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-79,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590288,2,PUT Update Character,200,OK,QA Pro REST API Load Test 1-79,text,true,,272,224,1,1,http://localhost:3001/character/4,2,0,0
+1791536590290,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-79,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590296,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-80,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590298,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-80,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590300,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-80,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590301,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-80,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590302,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-80,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590303,3,GET All Characters,200,OK,QA Pro REST API Load Test 1-81,text,true,,340,129,1,1,http://localhost:3001/characters,3,0,1
+1791536590306,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-81,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590307,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-81,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590308,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-81,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590309,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-81,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590315,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-82,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590317,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-82,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590318,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-82,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590319,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-82,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590320,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-82,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590328,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-83,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590330,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-83,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590332,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-83,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590333,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-83,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536590333,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-83,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590338,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-84,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536590341,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-84,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590342,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-84,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590343,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-84,text,true,,272,224,2,2,http://localhost:3001/character/4,1,0,0
+1791536590344,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-84,text,true,,293,216,2,2,http://localhost:3001/character/4,0,0,0
+1791536590344,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-85,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536590345,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-85,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590346,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-85,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590347,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-85,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536590348,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-85,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590357,3,GET All Characters,200,OK,QA Pro REST API Load Test 1-86,text,true,,340,129,1,1,http://localhost:3001/characters,3,0,0
+1791536590360,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-86,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590361,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-86,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590362,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-86,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590363,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-86,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590367,3,GET All Characters,200,OK,QA Pro REST API Load Test 1-87,text,true,,340,129,1,1,http://localhost:3001/characters,3,0,1
+1791536590370,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-87,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590371,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-87,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590371,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-87,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590372,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-87,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590374,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-88,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590376,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-88,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590377,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-88,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590377,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-88,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590378,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-88,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590388,3,GET All Characters,200,OK,QA Pro REST API Load Test 1-89,text,true,,340,129,1,1,http://localhost:3001/characters,3,0,1
+1791536590391,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-89,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590392,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-89,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590393,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-89,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590394,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-89,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590398,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-90,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,1
+1791536590401,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-90,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536590402,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-90,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590402,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-90,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590403,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-90,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590405,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-91,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590407,0,POST Create Character.,201,Created,QA Pro REST API Load Test 1-91,text,true,,277,223,1,1,http://localhost:3001/character,0,0,0
+1791536590408,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-91,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590408,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-91,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590409,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-91,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590415,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-92,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590417,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-92,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590418,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-92,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590419,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-92,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590420,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-92,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590429,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-93,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590431,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-93,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590432,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-93,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590433,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-93,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536590433,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-93,text,true,,293,216,2,2,http://localhost:3001/character/4,1,0,0
+1791536590434,1,GET All Characters,200,OK,QA Pro REST API Load Test 1-94,text,true,,340,129,1,1,http://localhost:3001/characters,1,0,0
+1791536590435,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-94,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590436,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-94,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590437,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-94,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536590438,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-94,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590444,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-95,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590446,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-95,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590447,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-95,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590448,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-95,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590449,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-95,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590458,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-96,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590460,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-96,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590461,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-96,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590462,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-96,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590463,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-96,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590467,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-97,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590469,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-97,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590470,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-97,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590471,0,PUT Update Character,200,OK,QA Pro REST API Load Test 1-97,text,true,,272,224,1,1,http://localhost:3001/character/4,0,0,0
+1791536590472,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-97,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590479,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-98,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590481,2,POST Create Character.,201,Created,QA Pro REST API Load Test 1-98,text,true,,277,223,1,1,http://localhost:3001/character,2,0,0
+1791536590483,0,GET Character By ID,200,OK,QA Pro REST API Load Test 1-98,text,true,,272,130,1,1,http://localhost:3001/character/4,0,0,0
+1791536590484,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-98,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590485,0,DELETE Character,200,OK,QA Pro REST API Load Test 1-98,text,true,,293,216,1,1,http://localhost:3001/character/4,0,0,0
+1791536590489,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-99,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590491,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-99,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590492,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-99,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590493,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-99,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590494,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-99,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
+1791536590499,2,GET All Characters,200,OK,QA Pro REST API Load Test 1-100,text,true,,340,129,1,1,http://localhost:3001/characters,2,0,0
+1791536590501,1,POST Create Character.,201,Created,QA Pro REST API Load Test 1-100,text,true,,277,223,1,1,http://localhost:3001/character,1,0,0
+1791536590502,1,GET Character By ID,200,OK,QA Pro REST API Load Test 1-100,text,true,,272,130,1,1,http://localhost:3001/character/4,1,0,0
+1791536590503,1,PUT Update Character,200,OK,QA Pro REST API Load Test 1-100,text,true,,272,224,1,1,http://localhost:3001/character/4,1,0,0
+1791536590504,1,DELETE Character,200,OK,QA Pro REST API Load Test 1-100,text,true,,293,216,1,1,http://localhost:3001/character/4,1,0,0
