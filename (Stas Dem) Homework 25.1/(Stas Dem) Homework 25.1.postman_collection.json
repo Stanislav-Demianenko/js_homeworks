@@ -198,11 +198,287 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "06 - GET All Movies",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response is an array\", function () {\n    const movies = pm.response.json();\n    pm.expect(movies).to.be.an(\"array\");\n});\n\npm.test(\"Movies have title and _id\", function () {\n    const movies = pm.response.json();\n    pm.expect(movies.length).to.be.above(0);\n\n    movies.forEach(function (movie) {\n        pm.expect(movie).to.have.property(\"_id\");\n        pm.expect(movie).to.have.property(\"title\");\n    });\n});\n"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/movies",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "movies"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "07 - GET Movie by ID",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response is a movie object\", function () {\n    const movie = pm.response.json();\n    pm.expect(movie).to.be.an(\"object\");\n});\n\npm.test(\"Movie ID is correct\", function () {\n    const movie = pm.response.json();\n    pm.expect(movie._id).to.eql(\"573a1390f29313caabcd42e8\");\n});\n\npm.test(\"Movie title is correct\", function () {\n    const movie = pm.response.json();\n    pm.expect(movie.title).to.eql(\"The Great Train Robbery\");\n});\n"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/movies/573a1390f29313caabcd42e8",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "movies",
+            "573a1390f29313caabcd42e8"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "08 - GET Movie Not Found",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "\npm.test(\"Status code is 404\", function () {\n    pm.response.to.have.status(404);\n});\n\npm.test(\"Response is JSON object\", function () {\n    const response = pm.response.json();\n    pm.expect(response).to.be.an(\"object\");\n});\n\npm.test(\"Movie not found\", function () {\n    const response = pm.response.json();\n    pm.expect(response.message).to.eql(\"Документ не знайдено\");\n});\n"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/movies/000000000000000000000000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "movies",
+            "000000000000000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "09 - GET Movie Invalid ID",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "\npm.test(\"Status code is 400\", function () {\n    pm.response.to.have.status(400);\n});\n\npm.test(\"Response is JSON object\", function () {\n    const response = pm.response.json();\n    pm.expect(response).to.be.an(\"object\");\n});\n\npm.test(\"Error message exists\", function () {\n    const response = pm.response.json();\n    pm.expect(response).to.have.property(\"error\");\n});\n"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/movies/invalid-id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "movies",
+            "invalid-id"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "10 - POST Create Test Movie",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {\n    pm.response.to.have.status(201);\n});\n\npm.test(\"Movie title is correct\", function () {\n    const movie = pm.response.json();\n    pm.expect(movie.title).to.eql(\"QA Homework Test Movie\");\n});\n\npm.test(\"Movie ID exists\", function () {\n    const movie = pm.response.json();\n    pm.expect(movie._id).to.exist;\n});\n\npm.test(\"Movie ID saved\", function () {\n    const movie = pm.response.json();\n    pm.collectionVariables.set(\"movieId\", movie._id);\n    pm.expect(movie._id).to.be.a(\"string\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"QA Homework Test Movie\",\n  \"year\": 2026,\n  \"genres\": [\"Drama\", \"Comedy\"],\n  \"runtime\": 120,\n  \"type\": \"movie\",\n  \"plot\": \"Test movie created for QA homework\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/movies_homework_test",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "movies_homework_test"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "№11 — PUT Update Test Movie",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Movie title is updated\", function () {\n    const movie = pm.response.json();\n    pm.expect(movie.title).to.eql(\"QA Homework Updated Movie\");\n});\n\npm.test(\"Movie year is updated\", function () {\n    const movie = pm.response.json();\n    pm.expect(movie.year).to.eql(2025);\n});\n\npm.test(\"Movie runtime is updated\", function () {\n    const movie = pm.response.json();\n    pm.expect(movie.runtime).to.eql(135);\n});\n\npm.test(\"Movie has updatedAt\", function () {\n    const movie = pm.response.json();\n    pm.expect(movie.updatedAt).to.exist;\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"QA Homework Updated Movie\",\n  \"year\": 2025,\n  \"genres\": [\"Action\", \"Adventure\"],\n  \"runtime\": 135,\n  \"type\": \"movie\",\n  \"plot\": \"Movie successfully updated during QA testing\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/movies_homework_test/{{movieId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "movies_homework_test",
+            "{{movieId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "12 - DELETE Test Movie",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response is JSON object\", function () {\n    const response = pm.response.json();\n    pm.expect(response).to.be.an(\"object\");\n});\n\npm.test(\"Movie deletion confirmed\", function () {\n    const response = pm.response.json();\n    pm.expect(\n        response.deletedCount === 1 ||\n        (typeof response.message === \"string\" &&\n         /видален|deleted|успішно/i.test(response.message))\n    ).to.eql(true);\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/movies_homework_test/{{movieId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "movies_homework_test",
+            "{{movieId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "13 - GET Deleted Movie",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 404\", function () {\n    pm.response.to.have.status(404);\n});\n\npm.test(\"Response is JSON object\", function () {\n    const response = pm.response.json();\n    pm.expect(response).to.be.an(\"object\");\n});\n\npm.test(\"Deleted movie not found\", function () {\n    const response = pm.response.json();\n    pm.expect(response.message).to.eql(\"Документ не знайдено\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/movies_homework_test/{{movieId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "movies_homework_test",
+            "{{movieId}}"
+          ]
+        }
+      },
+      "response": []
     }
   ],
   "variable": [
     {
       "key": "userId",
+      "value": ""
+    },
+    {
+      "key": "movieId",
       "value": ""
     }
   ]
